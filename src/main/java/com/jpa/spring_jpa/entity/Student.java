@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 uniqueConstraints = @UniqueConstraint(
 		name ="emailid_unique",
 		columnNames = "email_id"))
-class Student {
+public class Student {
 	@Id
 	@SequenceGenerator(name="student_sequence",
 	sequenceName = "student_sequence",
