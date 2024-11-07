@@ -18,25 +18,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "tbl_stud",
-uniqueConstraints = @UniqueConstraint(
-		name ="emailid_unique",
-		columnNames = "email_id"))
+@Table(name = "tbl_stud", uniqueConstraints = @UniqueConstraint(name = "emailid_unique", columnNames = "email_id"))
 public class Student {
 	@Id
-	@SequenceGenerator(name="student_sequence",
-	sequenceName = "student_sequence",
-	allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-	generator = "student_sequence" )
+	@SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
 	private Long sId;
 	private String sFName;
 	private String sLName;
-	@Column(name = "email_id",
-			nullable=false)
+	@Column(name = "email_id", nullable = false)
 	private String emailId;
-	private String gName;
-	private String gEmail;
-	private String gMob;
 
 }
