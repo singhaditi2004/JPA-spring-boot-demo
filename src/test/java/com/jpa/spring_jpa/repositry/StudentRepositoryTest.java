@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.jpa.spring_jpa.entity.Guardian;
 import com.jpa.spring_jpa.entity.Student;
 
 @SpringBootTest
@@ -19,14 +20,30 @@ class StudentRepositoryTest {
 
 	@Test
 	public void saveStudent() {
-		Student stud = Student.builder().emailId("Shalu@gmail.com").sFName("Shalu").sLName("Sharma").build();
+		Student stud = Student.builder().emailId("Slu@gmail.com").firstName("Shalu").lastName("Sharma").build();
 		sturepo.save(stud);
 
+	}
+
+	@Test
+	public void saveStudentWithGuardian() {
+		Guardian gd = Guardian.builder().gName("Advika ke papa").gEmail("adviapap@gmail.com").gMob("7654345566")
+				.build();
+		Student student = Student.builder().firstName("Advika").lastName("Sen").emailId("advia@gmail.com").grd(gd).build();
+
+		sturepo.save(student);
 	}
 
 	@Test
 	public void printAllStudent() {
 		List<Student> stuList = sturepo.findAll();
 		System.out.println("List = " + stuList.toString());
+	}
+	
+	@Test
+	public void printStudentByFirstName(String fName) {
+		 List<Student> stude=sturepo.findByFirstName("Advika");
+		 
+		 System.out.println("st"+" "+ stude);
 	}
 }

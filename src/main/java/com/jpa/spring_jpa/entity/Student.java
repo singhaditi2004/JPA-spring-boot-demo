@@ -1,6 +1,7 @@
 package com.jpa.spring_jpa.entity;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,9 +25,10 @@ public class Student {
 	@SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
 	private Long sId;
-	private String sFName;
-	private String sLName;
+	private String firstName;
+	private String lastName;
 	@Column(name = "email_id", nullable = false)
 	private String emailId;
-
+	@Embedded
+    private Guardian grd;
 }
