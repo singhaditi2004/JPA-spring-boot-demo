@@ -20,16 +20,16 @@ class StudentRepositoryTest {
 
 	@Test
 	public void saveStudent() {
-		Student stud = Student.builder().emailId("Slu@gmail.com").firstName("Shalu").lastName("Sharma").build();
+		Student stud = Student.builder().emailId("Slaauaauuu@gmail.com").firstName("Shalu").lastName("Sharma").build();
 		sturepo.save(stud);
 
 	}
 
 	@Test
 	public void saveStudentWithGuardian() {
-		Guardian gd = Guardian.builder().gName("Advika ke papa").gEmail("adviapap@gmail.com").gMob("7654345566")
+		Guardian gd = Guardian.builder().gName("Advika ke papa").gEmail("advaaiaaaaaapap@gmail.com").gMob("7654345566")
 				.build();
-		Student student = Student.builder().firstName("Advika").lastName("Sen").emailId("advia@gmail.com").grd(gd).build();
+		Student student = Student.builder().firstName("Advikaa").lastName("Sen").emailId("adaaavaassia@gmail.com").grd(gd).build();
 
 		sturepo.save(student);
 	}
@@ -42,7 +42,19 @@ class StudentRepositoryTest {
 	
 	@Test
 	public void printStudentByFirstName(String fName) {
-		 List<Student> stude=sturepo.findByFirstName("Advika");
+		 List<Student> stude=sturepo.findByFirstName("Advikaa");
+		 
+		 System.out.println("st"+" "+ stude);
+	}
+	@Test
+	public void printStudentByFirstNameContaining( ) {
+		 List<Student> stude=sturepo.findByFirstNameContaining("Ad");
+		 
+		 System.out.println("st"+" "+ stude);
+	}
+	@Test
+	public void printStudentByLastName( ) {
+		 List<Student> stude=sturepo.findByLastName("Sharma");
 		 
 		 System.out.println("st"+" "+ stude);
 	}
