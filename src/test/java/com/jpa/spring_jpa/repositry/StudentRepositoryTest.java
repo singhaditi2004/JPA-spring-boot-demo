@@ -20,16 +20,16 @@ class StudentRepositoryTest {
 
 	@Test
 	public void saveStudent() {
-		Student stud = Student.builder().emailId("Slaauaauuu@gmail.com").firstName("Shalu").lastName("Sharma").build();
+		Student stud = Student.builder().emailId("aa@gmail.com").firstName("Shalu").lastName("Sharma").build();
 		sturepo.save(stud);
 
 	}
 
 	@Test
 	public void saveStudentWithGuardian() {
-		Guardian gd = Guardian.builder().gName("Advika ke papa").gEmail("advaaiaaaaaapap@gmail.com").gMob("7654345566")
+		Guardian gd = Guardian.builder().gName("Advika ke papa").gEmail("aa@gmail.com").gMob("7654345566")
 				.build();
-		Student student = Student.builder().firstName("Advikaa").lastName("Sen").emailId("adaaavaassia@gmail.com").grd(gd).build();
+		Student student = Student.builder().firstName("Advikaa").lastName("Sen").emailId("adaaaaaaaaaaaaaaaaaaaaaavaassia@gmail.com").grd(gd).build();
 
 		sturepo.save(student);
 	}
@@ -57,5 +57,11 @@ class StudentRepositoryTest {
 		 List<Student> stude=sturepo.findByLastName("Sharma");
 		 
 		 System.out.println("st"+" "+ stude);
+	}
+	@Test
+	public void printGetStudentByEmailAddress() {
+		Student st=sturepo.getStudentByEmailAddress("a@gmail.com");
+		System.out.println("sttt"+""+st);
+		
 	}
 }
