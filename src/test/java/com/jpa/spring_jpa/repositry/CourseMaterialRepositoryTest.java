@@ -20,15 +20,15 @@ class CourseMaterialRepositoryTest {
 	@Test
 	public void saveCourseMaterial() {
 		Course c = Course.builder().credit(10).title("Java course").build();
-		CourseMaterial cm = CourseMaterial.builder().url("url").course(c).build();
-
+		CourseMaterial cm = CourseMaterial.builder().url("uiirl").course(c).build();
 		cmrepo.save(cm);
 
-	}
-@Test
+	} 
+
+	@Test
 	public void printAllCourseMaterials() {
 		List<CourseMaterial> courses = cmrepo.findAll();
-		System.out.println("cm"+" "+courses);
+		System.out.println("cm" + " " + courses);
 
 	}
 

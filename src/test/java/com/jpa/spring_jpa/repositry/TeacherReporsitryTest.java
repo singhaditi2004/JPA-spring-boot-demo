@@ -24,7 +24,7 @@ class TeacherReporsitryTest {
 		Course c1 = Course.builder().credit(6).title("Mongo DB").build();
 		List<Course> list = new ArrayList<>();
 		list.add(c1);
-		Teacher teacher = Teacher.builder().firstName("Isha").lastName("Sati").courses(list).build();
+		Teacher teacher = Teacher.builder().firstName("Isha").lastName("Sati").build();
 		teachRepo.save(teacher);
 	}
 
