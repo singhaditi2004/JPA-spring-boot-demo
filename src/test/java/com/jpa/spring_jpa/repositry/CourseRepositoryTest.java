@@ -57,7 +57,6 @@ class CourseRepositoryTest {
 	@Test
 	public void printfindByTitleContaingCourses() {
 		Pageable firstPageTenRecords = PageRequest.of(0, 10);
-
 		List<Course> courses = crepo.findByTitleContaining("D", firstPageTenRecords);
 	    System.out.println(courses);
 
